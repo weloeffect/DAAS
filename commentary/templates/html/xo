@@ -1,0 +1,325 @@
+<div class="row">
+                <div class="col-md-6 mb-3 ">
+            
+                  <label for="f_name" class="form-label email ms-5">First Name</label>
+                  <input type="text" class="form-control ms-5" id="f_name" name="first_name">
+                  <!-- {% for err in form.fname.errors %}
+                  <small class="text-danger mb-2">{{ err }}</small><br>
+                  {% endfor %} -->
+               
+              </div>
+              <div class="col-md-6 mb-3">
+            
+                <label for="l_name" class="form-label email">Last Name<span>(optional)</span></label>
+                <input type="text" class="form-control" id="l_name" name="last_name" >
+                <!-- {% for err in form.lname.errors %}
+                <small class="text-danger mb-2">{{ err }}</small><br>
+                {% endfor %} -->
+             
+            </div>
+
+            <nav class="navbar navbar-expand-lg nav-pills bg-dark navbar-dark">
+                <div class="container-md">
+                  <a class="navbar-brand" href="{% url 'home:home' %}">   
+                      <img src="{% static 'img/DAASico.png' %}" width="24" height="26" class="d-inline-block align-top">  
+                     <span style="color:white; font-size: 17px;">DAAS</span>
+                </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                      <li class="nav-item ps-2">
+                        <a class="nav-link navtext" href="javascript:void(0)">Community <!--<span class="vertical"></span>--></a>
+                      </li>
+                        <a class="nav-link navtext" href="{% url 'faqs:faqs' %}">FAQs<!--<span class="vertical"></span>--></a>
+                      </li>
+                      <li class="nav-item ps-2">
+                        <a class="nav-link navtext active" href="{% url 'commentary:comment' %}">Commentary <!--<span class="vertical"></span>--></a>
+                      </li>
+                      <li class="nav-item ps-2">
+                        <a class="nav-link navtext" href="javascript:void(0)">Satellite imagery</a>
+                      </li>
+                    </ul> 
+                    <form class="d-flex ">
+                      <a href="{% url 'user:signin' %}" class="btn btn-primary me-3 rounded size" id="login" style="font-size: 14px;">Login</a>
+                      <a href="{% url 'user:signup' %}" class="btn btn-danger me-3 rounded size" id="signup" style="font-size: 14px;">Sign Up</a>
+                        <span class="pipe me-3"></span>
+                        <div class="dropdown" >
+                            <button class="btn btn-outline-warning dropdown-toggle rounded langsize " type="button" id="lang" data-bs-toggle="dropdown" style="font-size: 14px;">
+                              <img src="{% static 'img/america.png' %}" alt="" class="img-fluid icon">  
+                              English(US)
+                            </button>
+                            
+                            <ul class="dropdown-menu bg-dark" >
+                              <li><a class="dropdown-item bg-dark text-light " href="#"><img src="{% static 'img/ethiopia.png' %}" alt="" class="img-fluid icon">  Amharic</a></li>
+                            </ul>
+                          </div>
+                    </form>
+                    
+                  </div>
+                </div>
+              </nav> -->
+
+              final
+              <nav class="navbar navbar-expand-sm nav-pills bg-dark navbar-dark ">
+                <div class="container-fluid  ms-sm-4 me-sm-4 ">
+                  <a class="navbar-brand " href="{% url 'home:home' %}">   
+                      <img src="{% static 'img/DAASico.png' %}" width="30" height="29" class="d-inline-block align-top">  
+                     <span style="color:white; font-size: 24px; ">DAAS</span>
+                </a>
+                  <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse  " id="mynavbar">
+                    <ul class="navbar-nav me-sm-auto ">
+                      <li class="nav-item  ps-sm-3 navb " >
+                        <a class="nav-link navtext " href="javascript:void(0)">Community <!--<span class="vertical"></span>--></a>
+                      </li>
+                      <li class="nav-item ps-sm-3 ">
+                        <a class="nav-link navtext " href="{% url 'faqs:faqs' %}">FAQs<!--<span class="vertical"></span>--></a>
+                      </li>
+                      <li class="nav-item ps-sm-3 ">
+                        <a class="nav-link navtext" href="{% url 'commentary:comment' %}">Commentary <!--<span class="vertical"></span>--></a>
+                      </li>
+                      <li class="nav-item ps-sm-3 ">
+                        <a class="nav-link navtext" href="javascript:void(0)">Satellite imagery</a>
+                      </li>
+                    </ul> 
+                    <form class="d-flex ">
+                      <a href="{% url 'user:signin' %}" class="btn btn-primary me-3 rounded size" id="login" style="font-size: 14px;">Login</a>
+                      <a href="{% url 'user:signup' %}" class="btn btn-danger me-3 rounded size" id="signup" style="font-size: 14px;">Sign Up</a>
+                        <span class="pipe me-3"></span>
+                        <div class="dropdown" >
+                            <button class="btn btn-outline-warning dropdown-toggle rounded langsize " type="button" id="lang" data-bs-toggle="dropdown" style="font-size: 14px;">
+                              <img src="{% static 'img/america.png' %}" alt="" class="img-fluid icon">  
+                              English(US)
+                            </button>
+                            
+                            <ul class="dropdown-menu bg-dark" >
+                              <li><a class="dropdown-item bg-dark text-light " href="#"><img src="{% static 'img/ethiopia.png' %}" alt="" class="img-fluid icon">  Amharic</a></li>
+                            </ul>
+                          </div>
+                    </form>
+                  </div>
+                </div>
+            </nav>
+
+            section 1 homepage
+            <section class="S1">
+      
+                <div class="container-fluid me-0  bg-image leaf-bg" style="height: 100vh;" >
+                 <div class="sub">
+                    <h1 class="text-center mt-5 pt-5 mb-0 fontsize">Agriculture revolutionized</h1>
+                 </div>
+                 <div class="sub1">
+                  <h2 class="text-center fontsizeSub">Experience the power of a digital adivisor within your grasp.</h2>
+                 </div>
+                 
+                  <div class="text-center mt-3 mb-0  ">
+                    <!-- <button class="btn btn-outline-primary btn-lg w-25  " type="button">Generate Report</button> -->
+                    <a href="{% url 'report:report_gen' %}" class="btn btn-outline-brown text-light  mt-5 btn-lg">Generate a Report</a>
+                    <!-- <button class="btn btn-outline-brown text-light  mt-5 btn-lg" type="button">Generate a Report</button> -->
+                 
+                   
+          
+                   </div>
+                   <!-- <div class="text-center mt-7 ">
+                     <button class="btn btn-danger blur btn-sm  " type="button">
+                       <img src="img/messagebox.svg" alt="textbox" class="img-fluid message">
+                       Any inquiries? feel free to contact us</button>
+          
+                   </div> -->
+                           <!-- </div> -->
+                  <!-- <div style="  background-color: transparent; height: 50%;" class="d-flex justify-content-center align-items-center"> -->
+                    <!-- <h1 class="text-center">Experience</h1> -->
+                 <!-- </div> -->
+                  <!-- <h3 class="text-center fontsize mt-5 pt-5">Expericence the power of a digital advisor within your grasp</h3> -->
+               </div>
+          
+                    
+                      <!-- <h2 class="text-center fontsizeSub">Experience the power of a digital adivisor within your grasp.</h2> -->
+                     
+                     
+          
+              </section>
+
+              homepage home app
+              <section class="S1">
+      
+                <div class="container-fluid me-0  bg-image leaf-bg" style="height: 100vh;" >
+                 <div class="sub">
+                    <h1 class="text-center mt-5 pt-5 mb-0 fontsize">Agriculture revolutionized</h1>
+                 </div>
+                 <div class="sub1">
+                  <h2 class="text-center fontsizeSub">Experience the power of a digital adivisor within your grasp.</h2>
+                 </div>
+                 
+                  <div class="text-center mt-3 mb-0  ">
+                    <!-- <button class="btn btn-outline-primary btn-lg w-25  " type="button">Generate Report</button> -->
+                    <a href="{% url 'report:report_gen' %}" class="btn btn-outline-brown text-light  mt-5 btn-lg">Generate a Report</a>
+                    <!-- <button class="btn btn-outline-brown text-light  mt-5 btn-lg" type="button">Generate a Report</button> -->
+                 
+                   
+          
+                   </div>
+                   <!-- <div class="text-center mt-7 ">
+                     <button class="btn btn-danger blur btn-sm  " type="button">
+                       <img src="img/messagebox.svg" alt="textbox" class="img-fluid message">
+                       Any inquiries? feel free to contact us</button>
+          
+                   </div> -->
+                           <!-- </div> -->
+                  <!-- <div style="  background-color: transparent; height: 50%;" class="d-flex justify-content-center align-items-center"> -->
+                    <!-- <h1 class="text-center">Experience</h1> -->
+                 <!-- </div> -->
+                  <!-- <h3 class="text-center fontsize mt-5 pt-5">Expericence the power of a digital advisor within your grasp</h3> -->
+               </div>
+          
+                    
+                      <!-- <h2 class="text-center fontsizeSub">Experience the power of a digital adivisor within your grasp.</h2> -->
+                     
+                     
+          
+              </section>
+             
+              
+              <section class="S2">
+                <div class="container-md " >
+                  <div class="row ps-md-3">
+                    <h1 class="text-md-center ">Why use DAAS?</h1>
+                  </div>
+                  <div class="row  mt-3 ">
+                    <div class="col-md-4 ">
+                      <img src="{% static 'img/select.png' %}" alt="hand" class="img-fluid hand ms-4">
+                      <h4>Easy to use</h4>
+                      <p class="text-center ">Basic computer knowledge is enough to acess the system</p>
+                    </div>
+                    <div class="col-md-4   ">
+                      <img src="{% static 'img/dollar.png' %}" alt="hand" class="img-fluid hand ms-4">
+                      <h4>Free of cost</h4>
+                      <p class="text-center  ">No charges are applied while using the system</p>
+                    </div>
+                    <div class="col-md-4  ">
+                      <img src="{% static 'img/lock1.png' %}" alt="hand" class="img-fluid hand ms-3">
+                      <h4>Secure</h4>
+                      <p class="text-center  ">Only authorized personnel are allowed to access the system</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="S3">
+                <div class="container-fluid   bg-image farmer-bg" style="height: 100vh;" >
+                  <div class="sub ">
+                    <h1 class=" pt-5 fontsize text-center">Immerse yourself into a diverse community of farmers</h1>
+                  </div>
+                  <div class="text-center mt-4">
+                    <a href="" class="btn btn-outline-brown text-light  mt-5 btn-lg">Interact Now</a>
+                    <!-- <button class="btn btn-outline-brown text-light  mt-5 btn-lg" type="button">Interact Now</button> -->
+                  </div>
+                  
+                </div>
+                <!-- <div class="container-fluid mt-5 bg-image text-center farmer-bg" style="height: ;">
+                  <h1 class=" mt-6 fontsize">Immerse yourself into a diverse community of farmers</h1>
+                  <button class="btn btn-brown  mt-5 btn-lg" type="button">Interact now!</button>
+                </div> -->
+              </section>
+              <section class="S4">
+                <div class="container mt-3   ">
+                  <h1 class=" ps-md-4  text-center">Search for available village information</h1>
+                  <div class="container">
+                    <div class="row search-height d-flex justify-content-center align-items-center">
+                        <div class="col-md-8">
+                          <div class="search">
+                            <input type="text" class="form-control rounded-pill" placeholder="Search for available village data...."> 
+                            <i class="fa fa-search"></i> 
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>        
+              </section>
+              <section class="S5">
+                <div class="container-fluid   bg-image satellite-bg" style="height: 100vh;" >
+                  <div class="sub ">
+                    <h1 class=" pt-5 fontsize text-center">Check out available satellite data</h1>
+                  </div>
+                  <div class="text-center mt-4">
+                    <a href="" class="btn btn-outline-brown text-light  mt-4 btn-lg">View Now</a>
+                    <!-- <button class="btn btn-outline-brown text-light  mt-5 btn-lg" type="button">Interact Now</button> -->
+                  </div>
+                </div>
+                <!-- <div class="container-fluid mt-3 bg-image text-center" style="background:  linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),url('img/satellite.jpg') no-repeat center ; width: 100vw   ; height: 130vh;">
+                  <h1 class="mt-7 fontsize">Check out available satellite data</h1>
+                  <button class="btn btn-brown  mt-4 btn-lg" type="button">View Now!</button>
+                  
+                </div> -->
+              </section>
+              <!-- <section class="login">
+                <div class="popup-login pt-md-5">
+                  <div class="container  clogin bg-light ms-md-5 mt-md-5">
+                    <div class="close">+</div>
+                    <div class="row ps-0 h-100">
+                            <div class="col-lg-4 ps-0 h-100 g-0 bg-image d-flex align-items-center justify-content-center" style="background-image:url(img/signup.jpg);border-radius: 19px 0px 0px 19px;">
+                                    <div class="h-100 w-100 ps-0 d-flex align-items-center justify-content-center blur">
+                                        <img src="img/DAASico.png" alt="DAAS" class="img-fluid wrap">
+                                        <h2 class="logo mt-4">DAAS</h2>
+                                    </div>
+                            </div>
+                            <div class="col-lg-8 ">
+                                <h1 class="text-center my-5 mb-3"> Welcome Back</h1>
+                                <h4 class="text-center ">Login to continue.</h2>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img src="img/user.png" alt="user" class="img-fluid userwrap my-4">
+                                </div>
+                                <form action="" class="">
+                                    <div class="row mb-0">
+                                        <label for="inputEmail3" class="col-sm-8 text-center ps-4 col-form-label ">Email</label>
+                                      </div>
+                                      <div class="row mb-2">
+                                        <div class="col-3">
+                                           
+                                        </div>
+                                      
+                                        <div class="col-6 text-start ps-0 ms-0">
+                                            <input type="email" class="form-control  " id="inputEmail3">
+                                        </div>
+                                    </div> 
+                                    <div class="row mb-0">
+                                        <label for="password" class="col-sm-8  text-center col-form-label ps-5">Password</label>
+                                      </div>
+                                      <div class="row mb-3">
+                                        <div class="col-3">
+                                          
+                                        </div>
+                                      
+                                        <div class="col-6 text-start ps-0 ms-0">
+                                            <input type="password" class="form-control  " id="pwd">
+                                        </div>
+                                    </div> 
+                                    <div class=" row text-center ps-md-4 ">
+                                        <button class="btn btn-primary btn-sm " type="button">Login</button>
+                                    </div>
+                                </form>
+                                <div class="row mt-3">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-end ">
+                                        <a href="#">Forgot email?</a>
+                                    </div>
+                                    <div class="col-sm-6 text-start ps-5">
+                                        <a href="#">Forgot password?</a>
+                                    </div>
+                                </div>
+                                <div class="row mt-4 text-center">
+                                    <h6>New User?<a href="#">Sign Up here</a></h6>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                </div>
+              </section> -->
+          
+              
+              <footer>
+                ggregr
+              </footer>

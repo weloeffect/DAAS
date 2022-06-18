@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <link href="{%static 'css/main.min.css' %}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{%static 'css/faqs.css' %}"> -->
+    <link rel="stylesheet" href="{%static 'css/faqs1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link rel="icon" href="{% static 'img/DAASico.png' %}" sizes="16x16" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <title>FAQs</title>
+</head>
+
+<body>
+  <style>
+    /* .personal button{
+      border-radius: 40px;
+    } */
+    .personal .btn:focus{
+            outline: none;
+            box-shadow: none;
+      }
+    .personal .btn:hover{
+            color:white ;
+      }
+    .personal .dropstart-toggle::after {
+            content: none;
+      }
+    .personal ul li{
+            align-items: center;
+            border-top:0px solid rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: left;
+            list-style: none;
+            padding: 10px 0px;
+      }
+    .personal ul li a{
+            display: inline-block;
+            color: #555;
+            font-size: 14px;
+            font-weight: 600;
+            padding-left: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+      }
+      .personal ul li:hover a{
+        color:#ff00ff;
+      }
+      /* .personal .dropdown-menu{
+        background-color: red;
+        width: 50%;
+       
+      } */
+  </style>
+    <nav class="navbar navbar-expand-sm nav-pills fixed-top bg-dark navbar-dark">
+        <div class="container-fluid ms-sm-4 me-sm-4 mb-0">
+          <a class="navbar-brand" href="{% url 'home:home' %}">   
+              <img src="{% static 'img/DAASico.png' %}" width="24" height="26" class="d-inline-block align-top">  
+             <span style="color:white; font-size: 17px;">DAAS</span>
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto ">
+              <li class="nav-item ps-3 mb-1">
+                <a class="nav-link navtext " href="javascript:void(0)">Community <!--<span class="vertical"></span>--></a>
+              </li>
+              <li class="nav-item ps-3 mb-1">
+                <a class="nav-link navtext active" href="{% url 'faqs:faqs' %}">FAQs<!--<span class="vertical"></span>--></a>
+              </li>
+              <li class="nav-item ps-3 mb-1">
+                <a class="nav-link navtext" href="{% url 'commentary:comment' %}">Commentary <!--<span class="vertical"></span>--></a>
+              </li>
+              <li class="nav-item ps-3 mb-1">
+                <a class="nav-link navtext" href="{% url 'report:report' %}">Report</a>
+              </li>
+            </ul> 
+            <form class="d-flex ">
+              {% if request.user.is_authenticated %}
+              <div class="personal  ">
+                <div class="btn-group  ">
+                  <button type="button" class="btn btn-primary  name " data-bs-toggle="dropdown" aria-expanded="false" style="display:block;border-radius: 50%; width: 30%;">
+                    
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-md-end">
+                    <h6 class="ps-2">
+                      {{request.user.first_name}} {{request.user.last_name}}
+                  </h6>
+                    <li style="border-top: 2px solid rgba(0,0,0,0.5); ;">
+                      <span class="material-icons icon ">person</span>
+                        <a class="" href="{% url 'user_DAAS:view_profile' %}">View Profile</a>
+                   </li>
+                    <li>
+                     
+                      <span class="material-icons">translate</span>
+                        <a class="" href="#">Language</a>
+                  </li>
+                    <li style="border-top: 2px solid rgba(0,0,0,0.5); ;">
+                      <span class="material-icons">logout</span>
+                        <a class="" href="{% url 'user_DAAS:signout' %}">Logout</a>
+                  </li>
+                  </ul>
+                </div>
+                <!-- <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle name" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    
+                  </button>
+                  <ul class="dropdown-menu dropstart" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">View Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Language</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                  </ul>
+                </div> -->
+                
+                <!-- <div class="profileImage"></div> -->
+                <span class="font-weight-bold" style="font-size: 10px; color: red; display: none;" id="first">{{request.user.first_name}}</span> 
+                <span class="font-weight-bold" style="font-size: 10px; color: red; display: none;" id="last">{{request.user.last_name}}</span>
+                
+              </div>              
+                         
+              <!-- <a href="{% url 'user_DAAS:signout' %}" class="btn btn-danger me-3 rounded size" id="logout" style="font-size: 14px;">Logout</a> -->
+              {% else %}
+              <a href="{% url 'user_DAAS:signin' %}" class="btn btn-primary me-2 rounded size" id="login" style="font-size: 14px;">Login</a>
+              <a href="{% url 'user_DAAS:register' %}" class="btn btn-danger me-0 rounded size" id="signup" style="font-size: 14px;">Sign Up</a>
+              {% endif %}
+                <!-- <span class="pipe me-3"></span>
+                <div class="dropdown" >
+                    <button class="btn btn-outline-warning dropdown-toggle rounded langsize " type="button" id="lang" data-bs-toggle="dropdown" style="font-size: 14px;">
+                      <img src="{% static 'img/america.png' %}" alt="" class="img-fluid icon">  
+                      English(US)
+                    </button>
+                    
+                    <ul class="dropdown-menu bg-dark" >
+                      <li><a class="dropdown-item bg-dark text-light " href="#"><img src="{% static 'img/ethiopia.png' %}" alt="" class="img-fluid icon">  Amharic</a></li>
+                    </ul>
+                  </div> -->
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div class="container-fluid my-5 pt-5">
+        <h1 class="text-center text-danger font-size">Frequently Asked Questions(FAQs)</h1>
+    </div>
+    <div class="container-fluid ">
+      <div class="accordion width-mod width-sm mx-auto accordion-flush   " id="accord">
+        <div class="accordion-item  ">
+          <h2 class="accordion-header" id="question1">
+            <button class="accordion-button bg-dark font-size1 text-danger  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer1">
+             <h1 class="me-4">Q)</h1> How to use the system?
+            </button>
+          </h2>
+          <div id="answer1" class="accordion-collapse collapse"  data-bs-parent="#accord">
+            <div class="accordion-body">
+              <div class="row h-100">
+                <div class="col-1 me-2 h-100 ">
+                  <h1>A)</h1>
+                </div>
+                <div class="col-10 h-100 ">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quia harum eius doloremque aut? Magni reiciendis numquam quas totam. Nobis commodi at, inventore nulla aut cupiditate facere voluptates dolorum officia!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item  ">
+          <h2 class="accordion-header" id="question3">
+            <button class="accordion-button bg-dark font-size1 text-danger  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3">
+             <h1 class="me-4">Q)</h1> How is data produced?
+            </button>
+          </h2>
+          <div id="answer3" class="accordion-collapse collapse"  data-bs-parent="#accord">
+            <div class="accordion-body">
+              <div class="row h-100">
+                <div class="col-1 me-2">
+                  <h1>A)</h1>
+                </div>
+                <div class="col-10 h-100 ">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quia harum eius doloremque aut? Magni reiciendis numquam quas totam. Nobis commodi at, inventore nulla aut cupiditate facere voluptates dolorum officia!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item  ">
+          <h2 class="accordion-header" id="question4">
+            <button class="accordion-button bg-dark font-size1 text-danger  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer4">
+             <h1 class="me-4">Q)</h1> How to contact us?
+            </button>
+          </h2>
+          <div id="answer4" class="accordion-collapse collapse"  data-bs-parent="#accord">
+            <div class="accordion-body">
+              <div class="row h-100">
+                <div class="col-1 me-2">
+                  <h1>A)</h1>
+                </div>
+                <div class="col-10 h-100 ">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quia harum eius doloremque aut? Magni reiciendis numquam quas totam. Nobis commodi at, inventore nulla aut cupiditate facere voluptates dolorum officia!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item  ">
+          <h2 class="accordion-header" id="question5">
+            <button class="accordion-button bg-dark font-size1 text-danger  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer5">
+             <h1 class="me-4">Q)</h1> How to access satellite data?
+            </button>
+          </h2>
+          <div id="answer5" class="accordion-collapse collapse"  data-bs-parent="#accord">
+            <div class="accordion-body">
+              <div class="row h-100">
+                <div class="col-1 me-2">
+                  <h1>A)</h1>
+                </div>
+                <div class="col-10 h-100 ">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quia harum eius doloremque aut? Magni reiciendis numquam quas totam. Nobis commodi at, inventore nulla aut cupiditate facere voluptates dolorum officia!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item  ">
+          <h2 class="accordion-header" id="question6">
+            <button class="accordion-button bg-dark font-size1 text-danger  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer6">
+             <h1 class="me-4">Q)</h1> How to interact with others?
+            </button>
+          </h2>
+          <div id="answer6" class="accordion-collapse collapse"  data-bs-parent="#accord">
+            <div class="accordion-body">
+              <div class="row h-100">
+                <div class="col-1 me-2">
+                  <h1>A)</h1>
+                </div>
+                <div class="col-10 h-100 ">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quia harum eius doloremque aut? Magni reiciendis numquam quas totam. Nobis commodi at, inventore nulla aut cupiditate facere voluptates dolorum officia!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    var firstName = $('#first').text();
+    var lastName = $('#last').text();
+    var intials = firstName.charAt(0) + lastName.charAt(0);
+    // var profileImage = $('.profileImage').text(intials);
+    var profileImage = $('.name').text(intials);
+  });
+</script>
+</body>
+</html>
