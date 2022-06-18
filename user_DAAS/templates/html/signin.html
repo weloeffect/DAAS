@@ -1,0 +1,39 @@
+<!-- final login page -->
+{% extends "html/layout.html" %}
+{% load static %}
+{% block title %}
+<title>Sign in</title>
+{% endblock %}
+
+{% block user%}
+<div class="col-md-6 " style="display: visible;" id="login">
+  <form class="form-container pt-2" action="{% url 'user1:signin' %}" method="POST">  
+    {%csrf_token%}
+     <h1 class="ms-0">Login</h1>
+     <h6>New user? <a href="{% url 'user1:register' %}">Create an account</a></h6>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label email">Phone Number</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+        
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label pass">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label check" for="exampleCheck1">Remember Me</label>
+      </div>
+      <button type="submit" class="btn  btn-success btn-block">Submit</button>
+      <h6 class="text-center pt-3" style="color:white;">Forgot password?<a href="">click here</a></h6>
+      <div class="divider d-flex align-items-center my-3"> 
+        <p class="text-center fw-bold mx-3 mb-0 " style="color: white;">OR</p>
+      </div>
+      <button type="submit" class="btn  btn-success btn-block" style="background-color: red;">
+        <i class="fab fa-google me-2"></i> Sign in with google
+      </button>        
+      
+    </form>
+    
+ </div>                             
+{% endblock %}

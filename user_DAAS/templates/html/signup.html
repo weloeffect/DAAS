@@ -1,0 +1,99 @@
+{% extends "html/layout.html" %}
+{%load static %}
+{% block title %}
+<title>Sign Up</title>
+{% endblock %}
+{% block user %}
+<div class="col-md-6" style="display: visible;" id="create">
+  <form class="form-container pt-2" action="{% url 'user_DAAS:register' %} " method="POST">  
+      {% csrf_token %}
+      <h1 style="color: white;">Sign up </h1>
+      <h6>Already have an account? <a href="{% url 'user_DAAS:signin' %}">Login</a></h6>
+      <div class="mb-3" >
+        <label for="phone_no" class="form-label email">Phone Number</label>
+        <input type="number" class="form-control" id="p_no" name="phone_number">
+        {% for err in register_form.phone_number.errors %}
+        <span class="text-danger"><i class="bi bi-exclamation-lg" style="color:red ;" ></i> {{err}}</span>
+        {% endfor %}
+         <!-- {% for er in form.phone.errors %}
+            <small class="text-danger mb-2">{{ er }}</small><br>
+         {% endfor %} -->
+        
+        
+      </div>
+      <div class="row">
+          <div class="col-md-6 mb-3 ">
+            
+              <label for="f_name" class="form-label email">First Name</label>
+              <input type="text" class="form-control" id="f_name" name="first_name">
+              {% for err in register_form.first_name.errors %}
+               <span class="text-danger"><i class="bi bi-exclamation-lg" style="color:red ;" ></i> {{err}}</span>
+              {% endfor %}
+              <!-- {% for err in form.fname.errors %}
+              <small class="text-danger mb-2">{{ err }}</small><br>
+              {% endfor %} -->
+           
+          </div>
+          <div class="col-md-6 mb-3">
+            
+              <label for="l_name" class="form-label email">Last Name</label>
+              <input type="text" class="form-control" id="l_name" name="last_name" >
+              {% for err in register_form.last_name.errors %}
+               <span class="text-danger"><i class="bi bi-exclamation-lg" style="color:red ;" ></i> {{err}}</span>
+              {% endfor %}
+              <!-- {% for err in form.lname.errors %}
+              <small class="text-danger mb-2">{{ err }}</small><br>
+              {% endfor %} -->
+           
+          </div>
+          <div class="mb-3">
+            <label for="passwd" class="form-label email">Password</label>
+            <input type="password" class="form-control" id="passwd" name="password1" >
+            {% for err in register_form.password1.errors %}
+            <span class="text-danger"><i class="bi bi-exclamation-lg" style="color:red ;" ></i> {{err}}</span>
+            {% endfor %}
+            <!-- {% for err in form.passw.errors %}
+            <small class="text-danger mb-2">{{ err }}</small><br>
+            {% endfor %} -->
+          </div>
+          <div class="mb-3">
+            <label for="passwd" class="form-label email">Password Confirmation</label>
+            <input type="password" class="form-control" id="passwd" name="password2" >
+            {% for err in register_form.password2.errors %}
+            <span class="text-danger"><i class="bi bi-exclamation-lg" style="color:red ;" ></i> {{err}}</span>
+            {% endfor %}
+           
+          </div>
+
+          <div class="mb-3">
+            <label for="e_mail" class="form-label email">Email </label>
+            <input type="email" class="form-control" id="e_mail" name="email" >
+            {% for err in register_form.email.errors %}
+            <span class="text-danger"><i class="bi bi-exclamation-lg" style="color:red ;" ></i> {{err}}</span>
+              {% endfor %}
+            </div>
+          <!-- <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="remember_check" name="remember">
+            <label class="form-check-label check" for="remember_check">Remember Me</label>
+          </div> -->
+          <button type="submit" class="btn  btn-success w-100" name="submit" value="Submit">SUBMIT</button>
+          <div class="divider d-flex align-items-center my-3">
+            <p class="text-center fw-bold mx-3 mb-0 " style="color: white;">OR</p>
+          </div>          
+          <button type="submit" class="btn  btn-success w-100" style="background-color: red;" name="signup">
+              <i class="fab fa-google me-2"></i> Sign up with google
+          </button> 
+      </div>
+  </form>
+    
+    
+ </div>
+{% endblock %}
+
+               
+   
+   
+
+    
+
+<!-- <h6>Already have an account? <a href="{% url 'signin' %}" target="_blank">Sign in</a></h6> -->
