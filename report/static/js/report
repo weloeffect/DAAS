@@ -1,0 +1,18 @@
+const startBtn = document.getElementById("start")
+const produceBtn = document.getElementById("produce")
+const reproduceBtn = document.getElementById("reproduce")
+const welcome = document.getElementById("Report-1")
+const generate = document.querySelector("#Report-2")
+const result = document.querySelector("#Report-3")
+
+startBtn.addEventListener('click', () =>{
+    // if(generate.style.display == "none")
+    // {
+    //     welcome.style.visibility = "hidden"
+    //     // welcome.style.display = "none"
+    //     // generate.style.display = "block"
+        
+        
+    // }
+    welcome.style.display = "none"
+})

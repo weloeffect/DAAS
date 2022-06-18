@@ -1,0 +1,16 @@
+ .profileImage {
+    width: 60px;
+    height: 40px;
+    border-radius: 60%;
+    background: purple;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    margin: auto;
+    /* margin: 20px 0; */
+  }
+  .navtext:hover {
+    background-color: gray !important;
+  }

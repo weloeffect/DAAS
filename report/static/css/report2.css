@@ -1,0 +1,17 @@
+/* .village{
+    height: 30px;
+    width: 300px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba( 0, 0, 0, 0.3));;
+    border: 0.3px solid  rgb(156, 156, 156);
+    
+} */
+.result-container{
+    height: 100px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid  rgb(182, 182, 182) ;
+    border-radius: 20px;
+    background-color: transparent;
+}

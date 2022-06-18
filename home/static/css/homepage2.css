@@ -1,0 +1,178 @@
+.head{
+    height: 100vh;
+    margin-top: 8vh;
+}
+
+.sub{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+   
+    height: 90px; 
+    width: 80%; 
+    margin: auto; 
+    margin-top: 10%;
+}
+.sub1{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  
+    padding-top: 10vh; 
+    height: 20px;
+    width: 80%; 
+    margin: auto;
+}
+.sub3{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: none; 
+    height: 60px; 
+    width: 80%; 
+    margin: auto;
+    margin-top: 5%;
+}
+ 
+.sub4{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: blue; 
+    
+
+    width: 80%; 
+    margin: auto;
+}
+.nav-height{
+    height: 50px;
+  }
+
+.leaf-bg{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url(' ../img/leaf.jpg') center top no-repeat;
+    background-size: 100% 100%;
+    /* background-image: url('../img/leaf.jpg') ; */
+    /* width: 100vw;
+    height: 100vh; */
+  
+  
+  }
+   .S1 .btn{
+    border: 8px solid rgb(156, 156, 156);
+   
+}
+  .S1 .btn-outline-brown:hover{
+   background-color: black;
+   
+}
+   .S3 .btn{
+    border: 8px solid rgb(156, 156, 156);
+    border-radius: 0;
+   
+}
+  .S3 .btn-outline-brown:hover{
+   background-color: black;
+   
+}
+.S5 .btn{
+    border: 8px solid rgb(156, 156, 156);
+    border-radius: 0;
+   
+}
+  .S5 .btn-outline-brown:hover{
+   background-color: black;
+   
+}
+.S3 .sub{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+   
+    height: 90px; 
+    width: 80%; 
+    margin: auto; 
+    margin-top: 15%;
+}
+.S5 .sub{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+   
+    height: 90px; 
+    width: 80%; 
+    margin: auto; 
+    margin-top: 16%;
+}
+
+.farmer-bg{
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url(' ../img/farmer.jpg') center top no-repeat;
+        background-size: 100% 100%;
+        
+    
+}
+.satellite-bg{
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url(' ../img/satellite.jpg') center top no-repeat;
+        background-size: 100% 100%;
+        
+    
+}
+  @media (max-width:900px){
+    html,body {
+        
+        overflow-x: visible;
+      
+        
+       
+       }
+    .sub{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        background-color: none; 
+        height: 90px; 
+        width: 80%; 
+        margin: auto; 
+        margin-top: 20%;
+    }
+    .sub1{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        /* background-color: red;  */
+        padding-top: 30vh; 
+        height: 20px;
+        width: 80%; 
+        margin: auto;
+        margin-bottom: 20%;
+    }
+    .S3 .sub{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        padding-top: 30vh; 
+        height: 90px; 
+        width: 80%; 
+        margin: auto; 
+        margin-top: 15%;
+        margin-bottom: 50%;
+    }
+    .S5 .sub{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        padding-top: 30vh; 
+        height: 90px; 
+        width: 80%; 
+        margin: auto; 
+        margin-top: 15%;
+        margin-bottom: 50%;
+    }
+    .navbar .navbar-collapse{
+        height: 50px;
+    }
+    .navb{
+        width: 100%;
+    }
+}
+
+  /* /home/static/img/faqsbg.jpg */

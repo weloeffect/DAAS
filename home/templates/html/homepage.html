@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <!-- MDB -->
+    <!-- <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css"
+    rel="stylesheet"> -->
+    <link href="{%static 'css/main.min.css' %}" rel="stylesheet">
+    
+    <!-- <link rel="stylesheet" href="{%static 'css/homepage.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{%static 'css/homepage2.css' %}"> -->
+    <link rel="stylesheet" href="{%static 'css/homepagef.css' %}">
+    <link rel="stylesheet" href="{%static 'css/home.css' %}">
+    <link rel="stylesheet" href="{%static 'css/hom.css' %}">
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
+    <link rel="icon" href="{% static 'img/DAASico.png' %}" sizes="16x16" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>DAAS | Digital Argicultural Adivisory System</title>
+    
+</head>
+<body>
+  <style>
+    /* .personal button{
+      border-radius: 40px;
+    } */
+    .personal .btn:focus{
+            outline: none;
+            box-shadow: none;
+      }
+    .personal .btn:hover{
+            color:white ;
+      }
+    .personal .dropstart-toggle::after {
+            content: none;
+      }
+    .personal ul li{
+            align-items: center;
+            border-top:0px solid rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: left;
+            list-style: none;
+            padding: 10px 0px;
+      }
+    .personal ul li a{
+            display: inline-block;
+            color: #555;
+            font-size: 14px;
+            font-weight: 600;
+            padding-left: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+      }
+      .personal ul li:hover a{
+        color:#ff00ff;
+      }
+      /* .personal .dropdown-menu{
+        background-color: red;
+        width: 50%;
+       
+      } */
+  </style>
+  <nav class="navbar navbar-expand-sm nav-pills fixed-top bg-dark navbar-dark"  style="height: 48px;">
+    <div class="container-fluid ms-sm-4 me-sm-4 mb-0">
+      <a class="navbar-brand" href="{% url 'home:home' %}">   
+          <img src="{% static 'img/DAASico.png' %}" width="24" height="26" class="d-inline-block align-top">  
+         <span style="color:white; font-size: 17px;">DAAS</span>
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto ">
+          <li class="nav-item ps-3 mb-1 pt-2">
+            <a class="nav-link navtext " href="javascript:void(0)">Community <!--<span class="vertical"></span>--></a>
+          </li>
+          <li class="nav-item ps-3 mb-1 pt-2">
+            <a class="nav-link navtext " href="{% url 'faqs:faqs' %}">FAQs<!--<span class="vertical"></span>--></a>
+          </li>
+          <li class="nav-item ps-3 mb-1 pt-2">
+            <a class="nav-link navtext" href="{% url 'commentary:comment' %}">Commentary <!--<span class="vertical"></span>--></a>
+          </li>
+          <li class="nav-item ps-3 mb-1 pt-2">
+            <a class="nav-link navtext " href="{% url 'report:report' %}">Report</a>
+          </li>
+        </ul> 
+        <form class="d-flex ">
+          {% if request.user.is_authenticated %}
+          <div class="personal  ">
+            <div class="btn-group  ">
+              <button type="button" class="btn btn-primary  name " data-bs-toggle="dropdown" aria-expanded="false" style="display:block;border-radius: 50%; width: 30%;">
+                
+              </button>
+              <ul class="dropdown-menu dropdown-menu-md-end">
+                <h6 class="ps-2">
+                  {{request.user.first_name}} {{request.user.last_name}}
+              </h6>
+                <li style="border-top: 2px solid rgba(0,0,0,0.5); ;">
+                  <span class="material-icons icon ">person</span>
+                    <a class="" href="{% url 'user_DAAS:view_profile' %}">View Profile</a>
+               </li>
+                <li>
+                 
+                  <span class="material-icons">translate</span>
+                    <a class="" href="#">Language</a>
+              </li>
+                <li style="border-top: 2px solid rgba(0,0,0,0.5); ;">
+                  <span class="material-icons">logout</span>
+                    <a class="" href="{% url 'user_DAAS:signout' %}">Logout</a>
+              </li>
+              </ul>
+            </div>
+            <!-- <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle name" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                
+              </button>
+              <ul class="dropdown-menu dropstart" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">View Profile</a></li>
+                <li><a class="dropdown-item" href="#">Language</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div> -->
+            
+            <!-- <div class="profileImage"></div> -->
+            <span class="font-weight-bold" style="font-size: 10px; color: red; display: none;" id="first">{{request.user.first_name}}</span> 
+            <span class="font-weight-bold" style="font-size: 10px; color: red; display: none;" id="last">{{request.user.last_name}}</span>
+            
+          </div>              
+                     
+          <!-- <a href="{% url 'user_DAAS:signout' %}" class="btn btn-danger me-3 rounded size" id="logout" style="font-size: 14px;">Logout</a> -->
+          {% else %}
+          <a href="{% url 'user_DAAS:signin' %}" class="btn btn-primary me-2 rounded size" id="login" style="font-size: 14px;">Login</a>
+          <a href="{% url 'user_DAAS:register' %}" class="btn btn-danger me-0 rounded size" id="signup" style="font-size: 14px;">Sign Up</a>
+          {% endif %}
+            <!-- <span class="pipe me-3"></span>
+            <div class="dropdown" >
+                <button class="btn btn-outline-warning dropdown-toggle rounded langsize " type="button" id="lang" data-bs-toggle="dropdown" style="font-size: 14px;">
+                  <img src="{% static 'img/america.png' %}" alt="" class="img-fluid icon">  
+                  English(US)
+                </button>
+                
+                <ul class="dropdown-menu bg-dark" >
+                  <li><a class="dropdown-item bg-dark text-light " href="#"><img src="{% static 'img/ethiopia.png' %}" alt="" class="img-fluid icon">  Amharic</a></li>
+                </ul>
+              </div> -->
+        </form>
+      </div>
+    </div>
+</nav>
+  
+  
+  <section class="S1" >
+      
+    <div class="container-fluid me-0 leaf-bg " style="height: 100vh; padding-top: 0; position: relative;" >
+      <div class=" pt-5"></div>
+      <div class=" pt-3 pt-xxl-5 mt-xxl-5"></div>
+      <div>
+        <h1 class="text-center mt-5 pt-4 mb-0 fontsize">Agriculture revolutionized</h1>
+        <h2 class="text-center pt-2 fontsizeSub">Experience the power of a digital adivisor within your grasp.</h2>
+      </div>
+      
+     <!-- <div class="sub">
+        <h1 class="text-center mt-5 pt-5 mb-0 fontsize">Agriculture revolutionized</h1>
+     </div> -->
+     <!-- <div class="sub1">
+      <h2 class="text-center fontsizeSub">Experience the power of a digital adivisor within your grasp.</h2>
+     </div> -->
+     
+      <div class="text-center  mb-0  ">
+        <!-- <button class="btn btn-outline-primary btn-lg w-25  " type="button">Generate Report</button> -->
+        <a href="{% url 'report:report' %}" class="btn btn-outline-brown text-light  mt-5 btn-lg">Generate A Report</a>
+        <!-- <button class="btn btn-outline-brown text-light  mt-5 btn-lg" type="button">Generate a Report</button> -->
+     
+       
+
+       </div>
+       <!-- <div class="text-center mt-7 ">
+         <button class="btn btn-danger blur btn-sm  " type="button">
+           <img src="img/messagebox.svg" alt="textbox" class="img-fluid message">
+           Any inquiries? feel free to contact us</button>
+
+       </div> -->
+               <!-- </div> -->
+      <!-- <div style="  background-color: transparent; height: 50%;" class="d-flex justify-content-center align-items-center"> -->
+        <!-- <h1 class="text-center">Experience</h1> -->
+     <!-- </div> -->
+      <!-- <h3 class="text-center fontsize mt-5 pt-5">Expericence the power of a digital advisor within your grasp</h3> -->
+   </div>
+
+        
+          <!-- <h2 class="text-center fontsizeSub">Experience the power of a digital adivisor within your grasp.</h2> -->
+         
+         
+
+  </section>
+  <section class="S2">
+    <div class="container-md " >
+      <div class="row ps-md-3">
+        <h1 class="text-md-center ">Why use DAAS?</h1>
+      </div>
+      <div class="row  mt-3 ">
+        <div class="col-md-4 ">
+          <img src="{% static 'img/select.png' %}" alt="hand" class="img-fluid hand ms-4">
+          <h4>Easy to use</h4>
+          <p class="text-center ">Basic computer knowledge is enough to acess the system</p>
+        </div>
+        <div class="col-md-4   ">
+          <img src="{% static 'img/dollar.png' %}" alt="hand" class="img-fluid hand ms-4">
+          <h4>Free of cost</h4>
+          <p class="text-center  ">No charges are applied while using the system</p>
+        </div>
+        <div class="col-md-4  ">
+          <img src="{% static 'img/lock1.png' %}" alt="hand" class="img-fluid hand ms-3">
+          <h4>Secure</h4>
+          <p class="text-center  ">Only authorized personnel are allowed to access the system</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="S3">
+    <div class="container-fluid   bg-image farmer-bg" style="height: 90vh;" >
+      <div class="pt-lg-5 pt-sm-5"></div>
+      <div class="pt-lg-5 pt-sm-5" ></div>
+      <div class="pt-lg-5 pt-sm-4"></div>
+        <h1 class=" pt-lg-5 pt-sm-0 fontsize text-center">Immerse yourself into a diverse community of farmers</h1>
+      
+      <div class="text-center ">
+        <a href="" class="btn btn-outline-brown text-light  mt-5 btn-lg">Interact Now</a>
+        <!-- <button class="btn btn-outline-brown text-light  mt-5 btn-lg" type="button">Interact Now</button> -->
+      </div>
+      
+    </div>
+    <!-- <div class="container-fluid mt-5 bg-image text-center farmer-bg" style="height: ;">
+      <h1 class=" mt-6 fontsize">Immerse yourself into a diverse community of farmers</h1>
+      <button class="btn btn-brown  mt-5 btn-lg" type="button">Interact now!</button>
+    </div> -->
+  </section>
+  <!-- <section class="S4">
+    <div class="container mt-3   ">
+      <h1 class=" ps-md-4  text-center">Search for available village information</h1>
+      <div class="container">
+        <div class="row search-height d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+              <div class="search">
+                <input type="text" class="form-control rounded-pill" placeholder="Search for available village data...."> 
+                <i class="fa fa-search"></i> 
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>        
+  </section> -->
+  <!-- <section class="S5">
+    <div class="container-fluid   bg-image satellite-bg" style="height: 90vh;" >
+      <div class="pt-lg-5 pt-sm-5"></div>
+      <div class="pt-lg-5 pt-sm-5"></div>
+      <div class="pt-lg-5 pt-sm-4">
+        <h1 class=" pt-lg-5  fontsize text-center">Check out available satellite data</h1>
+      </div>
+        
+        <div class="text-center pt-5">
+          <a href="" class="btn btn-outline-brown text-light   btn-lg">View Now</a>
+        </div>
+        
+      </div>
+      
+    </div> -->
+    grkogkr
+    <!-- <div class="container-fluid mt-3 bg-image text-center" style="background:  linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),url('img/satellite.jpg') no-repeat center ; width: 100vw   ; height: 130vh;">
+      <h1 class="mt-7 fontsize">Check out available satellite data</h1>
+      <button class="btn btn-brown  mt-4 btn-lg" type="button">View Now!</button>
+      
+    </div> -->
+  <!-- </section> -->
+    
+
+    <!-- <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"
+    ></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+        var firstName = $('#first').text();
+        var lastName = $('#last').text();
+        var intials = firstName.charAt(0) + lastName.charAt(0);
+        // var profileImage = $('.profileImage').text(intials);
+        var profileImage = $('.name').text(intials);
+      });
+    </script>
+</body>
+</html>
